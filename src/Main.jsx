@@ -57,7 +57,7 @@ const Main = () => {
                )}
             </div>
          </div>
-         <Link to='/audio'>Audio notification check</Link>
+         <Link to='/audio' className='px-3 py-2 bg-blue-900 text-white'>Audio notification check</Link>
       </div>
    )
 }
