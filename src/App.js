@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom'
+import Nofication from './Nofication';
 function App () {
   const vibrateDevice = () => {
     if ( navigator.vibrate ) {
@@ -15,6 +17,9 @@ function App () {
   }, [] );
   return (
     <div>
+      <Routes>
+        <Route path='/n' element={<Nofication />}></Route>
+      </Routes>
       <h1>Vibration Example</h1>
       <button onClick={vibrateDevice}>Vibrate</button>
     </div>
