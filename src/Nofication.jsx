@@ -1,49 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+import NotificationSound from './assets/mixkit-old-telephone-ring-1357.mp3'
 
 const Nofication = () => {
-   const [showModal, setShowModal] = useState( false );
-   const vibrateDevice = ( duration ) => {
-      if ( navigator.vibrate ) {
-         navigator.vibrate( duration );
-      } else {
-         console.log( 'Vibration API not supported' );
-      }
-   };
+   const audioPlayer = useRef( null );
 
-   const closePopup = () => {
-      setShowModal( false );
-      vibrateDevice( 0 ); // Stop the vibration
-   };
+   function playAudio () {
+      navigator.vibrate( 200 );
+      audioPlayer.current.play();
+   }
 
-   const openPopup = () => {
-      setShowModal( true );
-      vibrateDevice( 5000 ); // Vibrate for 5000 milliseconds (5 seconds)
-   };
-
-   useEffect( () => {
-      // Clean up the vibration when the component unmounts
-      return () => {
-         vibrateDevice( 0 );
-      };
-   }, [] );
    return (
-      <div>
+      <div className="App">
          <div>
-            <h1>Vibration and Custom Popup Example</h1>
-            <button onClick={openPopup}>Vibrate for 5 seconds and show popup</button>
-
-            {showModal && (
-               <div className="modal">
-                  <div className="modal-content">
-                     <p>Placed order by some Please accept.</p>
-                     <button onClick={closePopup}>Stop</button>
-                     <button onClick={closePopup}>Continue</button>
-                  </div>
-               </div>
-            )}
+            <h2>Press the button to play audio</h2>
+            <button onClick={playAudio}>Notification</button>
+            <audio ref={audioPlayer} src={NotificationSound} />
          </div>
       </div>
-   )
-}
+   );
+
+};
+
 
 export default Nofication
