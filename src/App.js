@@ -17,9 +17,10 @@ function App () {
   }, [] );
   return (
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path='/n' element={<Nofication />}></Route>
-      </Routes>
+      </Routes> */}
+      <Nofication />
       <h1>Vibration Example</h1>
       <button onClick={vibrateDevice}>Vibrate</button>
     </div>
