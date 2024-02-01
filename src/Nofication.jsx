@@ -35,7 +35,7 @@ const Nofication = () => {
             {showModal && (
                <div className="modal">
                   <div className="modal-content">
-                     <p>Vibrating for 5 seconds. Do you want to stop it?</p>
+                     <p>Placed order by some Please accept.</p>
                      <button onClick={closePopup}>Stop</button>
                      <button onClick={closePopup}>Continue</button>
                   </div>
