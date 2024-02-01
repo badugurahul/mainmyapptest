@@ -1,10 +1,22 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+function App () {
+  const vibrateDevice = () => {
+    if ( navigator.vibrate ) {
+      navigator.vibrate( 200 );
+    } else {
+      console.log( 'Vibration API not supported' );
+    }
+  };
 
-
-function App() {
+  useEffect( () => {
+    return () => {
+      navigator.vibrate( 0 );
+    };
+  }, [] );
   return (
-    <div className="App">
-    <h1>Hello</h1>
+    <div>
+      <h1>Vibration Example</h1>
+      <button onClick={vibrateDevice}>Vibrate</button>
     </div>
   );
 }
