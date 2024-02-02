@@ -35,6 +35,12 @@ const Main = () => {
          navigator.vibrate( 0 );
       };
    }, [] );
+
+   // const clinet = [order1,order1]
+   // const previosorder = [order1, order2]
+   // const funciton ( ) = > {
+
+   // }
    return (
       <div className='w-screen mt-80 gap-5 text-center flex  flex-col justify-content-center  items-center '>
          {/* <Nofication /> */}
@@ -58,6 +64,8 @@ const Main = () => {
             </div>
          </div>
          <Link to='/audio' className='px-3 py-2 bg-blue-900 text-white'>Audio notification check</Link>
+
+         <Link to='/l' className='px-3 py-2 bg-blue-900 text-white'>localstorage check</Link>
       </div>
    )
 }
