@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Localstorage from './Localstorage';
 
 const Main = () => {
    const vibrateDevice1 = () => {
@@ -42,7 +43,7 @@ const Main = () => {
 
    // }
    return (
-      <div className='w-screen mt-80 gap-5 text-center flex  flex-col justify-content-center  items-center '>
+      <div className='w-screen  gap-5 text-center flex  flex-col justify-content-center  items-center '>
          {/* <Nofication /> */}
          <h1 className='text-4xl  mb-10'>Vibration Example web to mobile test </h1>
          <button onClick={vibrateDevice1} className='text-white bg-blue-700'>Vibrate</button>
@@ -66,6 +67,8 @@ const Main = () => {
          <Link to='/audio' className='px-3 py-2 bg-blue-900 text-white'>Audio notification check</Link>
 
          <Link to='/l' className='px-3 py-2 bg-blue-900 text-white'>localstorage check</Link>
+
+         <Localstorage />
       </div>
    )
 }
